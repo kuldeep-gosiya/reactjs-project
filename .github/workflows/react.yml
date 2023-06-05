@@ -7,24 +7,22 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18]
+    runs-on: ubuntu-latest      
 
     steps:
-    - uses: actions/checkout@v3
-    - name: use node js
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        
-    - run: npm ci
-    - run: npm start 
-    - run: npm test 
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Install node 18
+      uses: actions/setup-node
+      with  
+        node-version: 18.x
+    - name: Install NPM Dependencies
+      run: npm i
+    - name: Build project
+      run: npm run build
     - name: make zip file 
       run: |
-        zip -r angular.zip /*
+        zip -r angular.zip /dist
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
