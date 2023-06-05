@@ -24,7 +24,7 @@ jobs:
       run: npm run build
     - name: make zip file 
       run: |
-        zip -r angular.zip /
+        zip -r angular.zip */
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
