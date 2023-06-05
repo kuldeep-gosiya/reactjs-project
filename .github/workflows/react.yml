@@ -10,14 +10,13 @@ jobs:
     runs-on: ubuntu-latest  
     strategy:
       matrix:
-        node-version: 18    
+        node-version: [18]    
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v2
-    - name: Install node 18
-      uses: actions/setup-node
-      with  
+    - uses: actions/checkout@v3
+    - name: Install node js
+      uses: actions/setup-node@v3
+      with:  
         node-version: 18.x
     - name: Install NPM Dependencies
       run: npm i
