@@ -21,7 +21,7 @@ jobs:
     - name: Install NPM Dependencies
       run: npm i
     - name: run project
-      run: npm start
+      run: npm test
     - name: make zip file 
       run: |
         zip -r angular.zip */
