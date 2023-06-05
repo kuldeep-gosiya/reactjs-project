@@ -58,4 +58,3 @@ jobs:
           port: ${{secrets.PORT}} 
           script: |
           sudo unzip /var/www/html/angular-app/angular.zip -d /var/www/html/angular-app/
-          rm -r /var/www/html/angular-app/angular.zip
