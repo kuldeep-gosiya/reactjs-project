@@ -21,7 +21,7 @@ jobs:
     - name: Install NPM Dependencies
       run: |
         npm i
-        npm rubn build
+        npm run build
     - name: make zip file 
       run: |
         sudo zip -r angular.zip ./dist 
