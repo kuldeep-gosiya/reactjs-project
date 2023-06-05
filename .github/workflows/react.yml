@@ -20,8 +20,8 @@ jobs:
         node-version: 18.x
     - name: Install NPM Dependencies
       run: npm i
-    - name: build project
-      run: npm run build
+    - name: test project
+      run: npm test
     - name: make zip file 
       run: |
         zip -r angular.zip .
@@ -55,7 +55,5 @@ jobs:
           username: ${{secrets.USER}}
           key: ${{secrets.KEY}}
           port: ${{secrets.PORT}}
-          run: |
-            sudo chmod 777 angular.zip 
-            sudo unzip angular.zip
+          command: sudo unzip angular.zip
           
