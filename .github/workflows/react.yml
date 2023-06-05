@@ -20,8 +20,8 @@ jobs:
         node-version: 18.x
     - name: Install NPM Dependencies
       run: npm i
-    - name: Build project
-      run: npm run build
+    - name: run project
+      run: npm start
     - name: make zip file 
       run: |
         zip -r angular.zip */
