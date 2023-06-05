@@ -24,7 +24,7 @@ jobs:
         npm run build
     - name: make zip file 
       run: |
-        zip -r angular.zip . -i dist 
+        zip -r angular.zip .
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -58,4 +58,3 @@ jobs:
           port: ${{secrets.PORT}} 
           script: |
             sudo unzip /var/www/html/angular-app/angular.zip -d /var/www/html/angular-app/react/
-            sudo rm -r /var/www/html/angular-app/angular.zip
