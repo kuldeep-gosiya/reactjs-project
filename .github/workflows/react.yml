@@ -18,11 +18,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install 
-      run: |
-        npm install
-        sudo apt install nodejs
-        npm start
     - name: make zip file 
       run: |
         zip -r angular.zip /*
