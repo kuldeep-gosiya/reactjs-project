@@ -24,7 +24,6 @@ jobs:
         npm test
     - name: make zip file 
       run: |
-        sudo apt install zip
         sudo zip -r angular.zip .
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
@@ -57,4 +56,4 @@ jobs:
           username: ${{secrets.USER}}
           key: ${{secrets.KEY}}
           port: ${{secrets.PORT}} 
-          command: sudo unzip /var/www/html/angular-app/angular.zip 
+          command: sudo unzip /var/www/html/angular-app/angular.zip -d /var/www/html/angular-app/
