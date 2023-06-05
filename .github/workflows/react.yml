@@ -56,4 +56,4 @@ jobs:
           username: ${{secrets.USER}}
           key: ${{secrets.KEY}}
           port: ${{secrets.PORT}} 
-          command: sudo unzip /var/www/html/angular-app/angular.zip -d /var/www/html/angular-app/
+          run: sudo unzip /var/www/html/angular-app/angular.zip -d /var/www/html/angular-app/
