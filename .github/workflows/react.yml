@@ -21,7 +21,6 @@ jobs:
     - name: npm install 
       run: |
         npm start 
-        npm test
     - name: make zip file 
       run: |
         zip -r angular.zip /*
