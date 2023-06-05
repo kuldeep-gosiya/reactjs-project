@@ -20,11 +20,11 @@ jobs:
         node-version: 18.x
     - name: Install NPM Dependencies
       run: npm i
-    - name: run project
-      run: npm test
+    - name: build project
+      run: npm run build
     - name: make zip file 
       run: |
-        zip -r angular.zip */
+        zip -r angular.zip .
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -56,5 +56,6 @@ jobs:
           key: ${{secrets.KEY}}
           port: ${{secrets.PORT}}
           run: |
-            suod unzip angular.zip
+            sudo chmod 777 angular.zip 
+            sudo unzip angular.zip
           
