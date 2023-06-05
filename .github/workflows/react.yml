@@ -19,12 +19,13 @@ jobs:
       with:  
         node-version: 18.x
     - name: Install NPM Dependencies
-      run: npm i
-    - name: test project
-      run: npm test
+      run: |
+        npm i
+        npm test
     - name: make zip file 
       run: |
-        zip -r angular.zip .
+        sudo apt install zip
+        sudo zip -r angular.zip .
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
